@@ -58,4 +58,18 @@ A programot a IntelliJ és Eclipse fejlesztői környezetben készítettük. A p
 
 ![Adatbázis UML](/image/AlkfejlUML.png)
 
+Az Author és a Book tábla között illetve a Book és a BookOrder között OneToMany kapcsolat van. A BookOrder és az User tábla között pedig ManyToOne kapcsolat van.
+
+# Könyvtárstruktúra bemutatása
+
+![Könyvtár szerkezet](/image/konyvtar1.png)
+![](/image/konyvtar2.png)
+
+
+A project könyvtárstruktúrája a fenti képen látható. A programunk az MVC szerkezeti mintát követi. Az entity packageben találhatóak az adatbázisban található táblák megvalósításai. Minden egyes entitáshoz a repository packageben található egy repó amik segítségével kérhetünk le rekordokat az adatbázisból. Ezeket a repókat a service packageben találhato @Service classokban használjuk. Ezekben az osztályokban történik az adatbázissal való kommunikáció folyamatok megvalósítása. A controller packageben találhatóak a @RestController osztályok.
+
+# Végpont tervek és leírások
+
+#Egy végpont működésének leírása
+
 
