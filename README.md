@@ -92,7 +92,9 @@ Author (/author):
  /login               post  bejelentkező oldal
  /edit                post  szerkeszti az adott felhasználó adatait
  
-# Egy végpont működésének leírása:
+# Egy végpont működése:
+
+![](/image/Vegpontszeq.png)
  
 
 
