@@ -68,8 +68,31 @@ Az Author és a Book tábla között illetve a Book és a BookOrder között One
 
 A project könyvtárstruktúrája a fenti képen látható. A programunk az MVC szerkezeti mintát követi. Az entity packageben találhatóak az adatbázisban található táblák megvalósításai. Minden egyes entitáshoz a repository packageben található egy repó amik segítségével kérhetünk le rekordokat az adatbázisból. Ezeket a repókat a service packageben találhato @Service classokban használjuk. Ezekben az osztályokban történik az adatbázissal való kommunikáció folyamatok megvalósítása. A controller packageben találhatóak a @RestController osztályok.
 
-# Végpont tervek és leírások
+# Végpontok
 
-#Egy végpont működésének leírása
+Author (/author):
+ /listall             get    kilistázza az összes írót
+ /new                 post   új írót ad hozzá az adatbázishoz
+ 
+ Book (/book):
+ /listall             get    kilistázza az összes könyvet
+ /{id}                get    kiírja az adott id-vel rendelkező könyv adatait
+ /new                 post   új könyvet ad hozzá az adatbázishoz
+ /category/{category} get    kilistázza az adott kategóriájú könyveket
+ 
+ BookOrder (/bookorder):
+ /listall             get   kilistázza az összes rendelés
+ /new                 get   új rendelést ad hozzá az adatbázishoz
+ /oldorders           post  kilistázza a adott felhasználóhoz tartozó régi rendeléseket  
+ /updatestatus        post  módosítja az adott rendelés státuszát
+ 
+ User (/user):
+ /listall             get   kilistázza az összes felhasználót
+ /register            post  új felhazsnálót ad hozzá az adatbázishoz
+ /login               post  bejelentkező oldal
+ /edit                post  szerkeszti az adott felhasználó adatait
+ 
+# Egy végpont működésének leírása:
+ 
 
 
