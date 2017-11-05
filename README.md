@@ -47,5 +47,15 @@
 -  vendég: könyvek keresését, böngészését, leírások/ajánlók megtekintését végezheti.
 -  felhasználó: a vendég szerepkörén túl rendelések beküldésére jogosult, illetve listázhatja régebbi rendeléseit.
 -  dolgozók: látják a rendelési listát, illetve a rendelések státuszát átállíthatják.
-  
-  
+ 
+# 2. BACKEND DOKUMENTÁCIÓ
+
+# Fejlesztői környezet bemutatása, beállítása, használt technológiák
+
+A programot a IntelliJ és Eclipse fejlesztői környezetben készítettük. A project elkészítéséhez a Spring Boot keretrendszert használjuk, adatbázisnak pedig egy H2 adatbázist használtunk. Az adatbázis beállítása az application.properties fájban található meg.
+
+# Adatbázis terv
+
+![Adatbázis UML](/image/AlkfejlUML.png)
+
+
