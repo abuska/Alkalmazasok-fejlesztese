@@ -1,0 +1,37 @@
+<div class="container" *ngIf="category!='ÖSSZES'">
+  <!-- Example row of columns -->
+  <h2>{{ this.category | uppercase }}</h2>
+  <div class="row" >
+    <div class="col-md-4" *ngFor="let book of this.booklist" >
+      <h2>{{book.title}}</h2>
+      <p><a class="btn btn-secondary" routerLink="/book/{{book.id}}" role="button">
+      </a></p>
+      <p>{{ book.shortDesc }} </p>
+    </div>
+
+  </div>
+
+</div>
+
+
+    <main role="main" *ngIf="category=='ÖSSZES'">
+        <div class="jumbotron">
+            <div class="container" >
+                <!-- Example row of columns -->
+                <h2>{{ this.category | uppercase }}</h2>
+                <div class="row" >
+                  <div class="col-md-4" *ngFor="let book of this.booklist" >
+                    <h2>{{book.title}}</h2>
+                    <p><a class="btn btn-secondary" routerLink="/book/{{book.id}}" role="button">
+                    </a></p>
+                    <p>{{ book.shortDesc }} </p>
+                  </div>
+              
+                </div>
+  </div>
+</div>
+    </main>
+
+
+  
+    

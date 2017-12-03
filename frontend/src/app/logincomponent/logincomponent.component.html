@@ -1,0 +1,55 @@
+<main role="main" *ngIf="!this.loginService.isLoggedIn">
+  <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Bejelentkezés</h1>
+        <form>
+            <div class="form-control">
+          <label class="col-md-5" for="useremail">
+            E-mail cím:
+          </label>
+          <input type="email" #useremail  class="col-md-6" name="useremail">
+          <br>
+            <label class="col-md-5"  for="password">
+            Jelszó:
+          </label>
+          <input type="password" #userpwd class="col-md-6" name="password">
+        </div>
+        </form>
+        <div *ngIf="!validLogin">
+          Hibás felhasználónév vagy jelszó
+          </div>
+        <p><a class="btn btn-primary" 
+          (click)="onLogin(useremail.value,userpwd.value)" 
+          role="button"
+          >Bejelentkezés »</a></p>
+      </div>
+    </div>
+
+    
+    </main>
+    <main role="main" *ngIf=" this.loginService.isLoggedIn===true">
+        <div class="jumbotron">
+            <div class="container">  <h1 class="display-3">Profilom</h1>
+              <h2>{{ this.activeUser.email  }}</h2>
+              <div class="row">
+                <div class="col-md-6 column">
+                  <div class="col-md-3">{{this.activeUser.name}}</div>
+               
+                </div>
+                <div class="col-md-6 column">
+                        <img src="https://i.imgur.com/4mnv1Ui.gif" alt="borítókép">
+                </div>
+              </div>
+
+              <div class="row">
+                <app-bookorder></app-bookorder>
+              </div>
+              
+            
+              <button class="btn btn-primary" (click)="onLogout()">Kijelentkezés</button>
+            
+            </div>
+          </div>
+      
+          
+          </main>

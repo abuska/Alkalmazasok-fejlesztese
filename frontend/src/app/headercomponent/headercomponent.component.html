@@ -1,0 +1,33 @@
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" routerLink="/">Kezdőlap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link"  routerLink="/login" *ngIf="!this.loginService.isLoggedIn" >
+              Bejelentkezés
+            </a>
+            <a class="nav-link"  routerLink="/login" *ngIf="this.loginService.isLoggedIn" >
+              Profilom
+            </a>
+                <a class="nav-link"  routerLink="/login"  *ngIf=" this.loginService.isLoggedIn 
+                && 
+                this.loginService.activeUser.role==='admin'" >
+              Rendelések
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/books">Könyvek</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input #searchfield class="form-control mr-sm-2" type="text" placeholder="Könyv címe..." 
+          aria-label="Search">
+          <button class="btn btn-outline my-2 my-sm-0"  (click)="this.onSearch(searchfield.value);" >Keresés</button>
+        </form>
+      </div>
+    </nav>

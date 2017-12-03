@@ -1,0 +1,35 @@
+
+<div *ngIf="book">
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+  <h2>{{ book.title | uppercase }}</h2>
+  <div class="row">
+    <div class="col-md-6 column">
+      <div class="col-md-3">Szerző: {{book.authors}}</div>
+      <div class="col-md-3"><span>Kiadó: </span>{{book.publisher}}</div>
+      <div class="col-md-3"><span>Kiadás: </span>{{book.publish}}</div>
+      <div class="col-md-3"><span>Kategória: </span>{{book.category}}</div>
+      <div class="col-md-3"><span>Ár: </span>{{book.price}}</div>
+      
+    </div>
+    <div class="col-md-6 column">
+            <img src="https://i.imgur.com/4mnv1Ui.gif" alt="borítókép">
+    </div>
+  </div>
+  <div class="row">
+      <div class="form-control column">
+      {{book.longDesc}}
+  </div>
+</div>
+  
+
+  <button *ngIf="!this.isLoggedIn"
+   class="btn btn-primary" (click)="this.router.navigate(['login']);">Vásárláshoz jelentkezz be!</button>
+  <button *ngIf="this.isLoggedIn"
+   class="btn btn-primary" (click)="onBuy(book)">Vásárlás</button>
+  <button class="btn" (click)="goBack()">Vissza</button>
+  </div>
+  </div>
+    </main>
+</div>
