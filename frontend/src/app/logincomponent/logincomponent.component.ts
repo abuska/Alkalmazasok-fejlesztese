@@ -16,20 +16,25 @@ export class LogincomponentComponent implements OnInit {
 
   ngOnInit() {
     this.activeUser = this.loginService.activeUser;
-    console.log(this.activeUser);
+    // console.log("19.sor", this.activeUser);
   }
 
-  onLogin(useremail: string, userpwd: string) {
-    this.loginAttempt =  this.loginService.login(useremail, userpwd);
+  async onLogin(username: string, userpwd: string) {
+    this.loginAttempt = await this.loginService.login(username, userpwd);
     if (this.loginAttempt) {
       this.validLogin = true;
       this.isLoggedin = true;
-      this.activeUser = this.loginService.getUser(useremail);
-      console.log(this.activeUser);
+      this.loginService.isLoggedIn = true;
+      this.activeUser = this.loginService.activeUser;
+    //  console.log(this.activeUser);
     }
   }
+
+    onRegister() {
+      this.router.navigate(['registration' ]);
+    }
+
     onLogout() {
-      this.router.navigate(['login' ]);
       this.isLoggedin = false;
       this.validLogin = true;
       this.loginAttempt = null;

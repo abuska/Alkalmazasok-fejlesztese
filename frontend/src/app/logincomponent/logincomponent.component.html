@@ -5,7 +5,7 @@
         <form>
             <div class="form-control">
           <label class="col-md-5" for="useremail">
-            E-mail cím:
+           Felhasználónév:
           </label>
           <input type="email" #useremail  class="col-md-6" name="useremail">
           <br>
@@ -20,8 +20,10 @@
           </div>
         <p><a class="btn btn-primary" 
           (click)="onLogin(useremail.value,userpwd.value)" 
-          role="button"
           >Bejelentkezés »</a></p>
+          <p><a class="btn btn-primary" 
+            (click)="onRegister()" 
+            >Regisztráció »</a></p>
       </div>
     </div>
 
@@ -33,7 +35,7 @@
               <h2>{{ this.activeUser.email  }}</h2>
               <div class="row">
                 <div class="col-md-6 column">
-                  <div class="col-md-3">{{this.activeUser.name}}</div>
+                  {{this.activeUser.name}}
                
                 </div>
                 <div class="col-md-6 column">

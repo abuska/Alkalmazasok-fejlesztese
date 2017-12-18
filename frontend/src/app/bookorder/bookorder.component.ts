@@ -27,4 +27,8 @@ export class BookorderComponent implements OnInit {
     this.activeUser = this.loginService.activeUser;
   }
 
+
+  onConfirmBuy(id){
+    alert(id);
+  }
 }

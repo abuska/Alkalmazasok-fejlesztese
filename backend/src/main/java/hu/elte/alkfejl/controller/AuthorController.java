@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import static hu.elte.alkfejl.entity.User.Role.*;
-	
+
+@CrossOrigin
 	@RestController
 	@RequestMapping("/author")
 	public class AuthorController {

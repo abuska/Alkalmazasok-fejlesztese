@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { MainlistcomponentComponent } from './mainlistcomponent/mainlistcomponent.component';
 import { LogincomponentComponent } from './logincomponent/logincomponent.component';
 import { BooklistcomponentComponent } from './booklistcomponent/booklistcomponent.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'index', component: MainlistcomponentComponent },
   { path: 'book/:id', component: BookcomponentComponent },
   { path: 'books', component: BooklistcomponentComponent },
-  { path: 'login', component: LogincomponentComponent }
+  { path: 'login', component: LogincomponentComponent },
+  { path: 'registration', component: RegisterComponent}
 ];
 
 @NgModule({

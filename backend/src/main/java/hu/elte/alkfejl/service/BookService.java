@@ -21,6 +21,12 @@ public class BookService{
 		return bookRepository.findOne(id);
 	}
 	
+
+public Book findByTitle(String title) {
+return bookRepository.findOneByTitle(title);
+}
+
+
 	public Iterable<Book> findByCategory(String category) {
 		return bookRepository.findByCategory(category);
 	}

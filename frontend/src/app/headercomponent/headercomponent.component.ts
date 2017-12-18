@@ -18,10 +18,17 @@ export class HeadercomponentComponent implements OnInit {
   }
 
 
-  onSearch(bookTitle: string) {
+  async onSearch(bookTitle: string) {
+    /*
      const getbook = this.bookService.getBookByTitle(bookTitle);
       if ( typeof (getbook) !== 'undefined')  {
-        this.router.navigate(['book/' + getbook.id ]);
+        this.router.navigate(['book/' + bookTitle ]);
+      }
+      */
+      const getbook = this.bookService.getBookByTitle(bookTitle);
+      if ( typeof (getbook) !== 'undefined')  {
+        console.log(getbook);
+        //this.router.navigate(['book/' + bookTitle ]);
       }
   }
 

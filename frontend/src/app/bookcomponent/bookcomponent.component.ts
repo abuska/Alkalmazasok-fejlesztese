@@ -32,7 +32,7 @@ export class BookcomponentComponent implements OnInit {
   }
 
   onBuy(book: Book) {
-    this.bookOrderService.buyBook(book.id, this.loginService.activeUser.id);
+    this.bookOrderService.buyBook(book.id, this.loginService.fakeUser.id);
     this.router.navigate(['login']);
   }
 

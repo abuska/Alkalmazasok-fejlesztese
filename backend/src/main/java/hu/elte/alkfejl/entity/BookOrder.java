@@ -28,7 +28,7 @@ public class BookOrder extends BaseEntity {
     private User user;
     
     @Column(nullable = false)
-    private Date orderDate;
+    private String orderDate;
    
     @Column
     @Enumerated(EnumType.STRING)
@@ -36,6 +36,15 @@ public class BookOrder extends BaseEntity {
 
     public enum State {
         UNPROCESSED, PROCESSING, DELETED, DELIVERY, COMPLETE
+    }
+
+    public void setStatus(String newStatus) {
+       this.state = State.valueOf(newStatus);
+        
+    }
+    
+    public void setOrderDate(String date) {
+        this.orderDate = date;
     }
 
     

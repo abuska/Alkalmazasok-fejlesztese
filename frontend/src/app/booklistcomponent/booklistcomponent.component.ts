@@ -10,13 +10,14 @@ export class BooklistcomponentComponent implements OnInit {
   @Input() category: string;
   constructor(private bookService: BookServiceService) {
   }
+
   booklist = this.bookService.getBooksByCat(this.category);
 
-  ngOnInit() {
+  async ngOnInit() {
     if ( typeof(this.category) !== 'undefined') {
       this.booklist = this.bookService.getBooksByCat(this.category);
     }else {
-      this.booklist = this.bookService.getAllBooks();
+      this.booklist = await this.bookService.getAllBooks();
       this.category = 'ÖSSZES';
     }
   }

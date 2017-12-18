@@ -9,4 +9,6 @@ import hu.elte.alkfejl.entity.Book;
 public interface BookRepository   extends CrudRepository<Book, Long> {
 	Iterable<Book> findByCategory(String category);
 
+    Book findOneByTitle(String title);
+
 }

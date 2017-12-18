@@ -1,0 +1,40 @@
+<main role="main" *ngIf="!this.loginService.isLoggedIn">
+  <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Regisztráció</h1>
+        <form >
+            <div class="form-control">
+               <label class="col-md-5" for="useremail">
+            E-mail cím
+          </label>
+          <input type="email" #useremail  class="col-md-6" name="useremail">
+          <label class="col-md-5" for="fullname">
+             Teljes név
+            </label>
+            <input type="text" #fullname  class="col-md-6" name="fulname">
+            <label class="col-md-5" for="address">
+               Cím
+              </label>
+              <input type="text" #address  class="col-md-6" name="address">
+              <label class="col-md-5" for="username">
+                 Felhasználónév
+                </label>
+                <input type="text" #username  class="col-md-6" name="username">
+                <label class="col-md-5" for="password">
+                    Jelszó
+                   </label>
+                   <input type="password" #password  class="col-md-6" name="password">
+       
+
+
+        </div>
+        </form>
+        <div *ngIf="!validLogin">
+          Hibás felhasználónév vagy jelszó
+          </div>
+        <p><a class="btn btn-primary" 
+          (click)="this.onRegister(useremail.value,fullname.value,address.value,username.value,password.value)"
+          >Regisztráció »</a></p>
+          <p><a class="btn btn-primary" (click)="this.location.back();">Mégsem »</a></p>
+      </div>
+    </div>

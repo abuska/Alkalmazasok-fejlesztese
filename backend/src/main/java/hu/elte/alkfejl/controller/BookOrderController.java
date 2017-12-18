@@ -20,7 +20,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import static hu.elte.alkfejl.entity.User.Role.*;
-	
+
+@CrossOrigin
 	@RestController
 	@RequestMapping("/bookorder")
 	public class BookOrderController {
