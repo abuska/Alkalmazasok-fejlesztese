@@ -88,7 +88,7 @@ Author (/author):
  
  User (/user):
  /listall             get   kilistázza az összes felhasználót
- /register            post  új felhazsnálót ad hozzá az adatbázishoz
+ /register            post  új felhasználót ad hozzá az adatbázishoz
  /login               post  bejelentkező oldal
  /edit                post  szerkeszti az adott felhasználó adatait
  
@@ -97,4 +97,18 @@ Author (/author):
 ![](/image/Vegpontszeq.png)
  
 
+# Üzembe helyezés
+## Frontend
+Az alkalmazás frontend részének elindításához szükség van az npm csomagkezelőre. Ez a NodeJs szoftverrendszerrel együtt telepítésre kerül pl: https://nodejs.org/dist/v8.9.3/node-v8.9.3-x64.msi linken elérhető.
+Ennek telepítése után már elérhetővé válik parancssorból az npm csomagkezelő, és a projekt mappájába navigálás után az "npm install" parancs kiadásával letöltésre kerülnek a szükséges könyvtárak, amelyek a package.json fájlban kerültek meghatározásra.
+Még az első indítás előtt célszerű ellenőrizni, hogy mely címen lesz elérhető a backend kiszolgáló, ez alapértelmezetten a "localhost:8080", de tetszőlegesen átírható a book-service.service.ts, bookorder.service.ts, és a login.service.ts fájlokban ahogy arra szükség van.
+Mindezek után az alkalmazás parancssorból az "ng serve" parancs kiadásával indítható el.
+
+## Backend
+A kiszolgáló üzemeltetéséhez Java jre telepítése szükséges, de adott esetben az Eclipse fejlesztőkörnyezet képes a futtatására.
+A függőségek a pom.xml fájlban kerülnek tárolásra.
+Elindítani Eclipse környezetben, úgy lehet, hogy kiválasztjuk az AlkfejlApplication.java fájlt, azon jobb gombot nyomunk, majd a Run As menüből kiválasztjuk a Java Application menüpontot.
+Ekkor elindul a szerver, alapértelmezetten lefoglalva a 8080-as portot, ez módosítani a resources/application.properties fájlban lehet amennyiben szükséges.
+
+Innentől kezdve ha sikeresen beállításra került a két rész, érzékelni fogják egymást, és használatba vehető az alkalmazás.
 
